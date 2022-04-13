@@ -7,12 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * The servlet is used to process user GET requests, that is, to handle interactions with the calculator.
- * There is no need for mapping in web.xml.
- *
- * 
- */
+
 @WebServlet("/CalculatorServlet")
 public class CalculatorServlet extends HttpServlet {
 
@@ -144,9 +139,7 @@ public class CalculatorServlet extends HttpServlet {
         updateResult(String.valueOf(builder));
     }
 
-    /**
-     * Getting a number when calling the operation.
-     */
+   
     private void getNumber() {
         if (!ifExistsFirstNumber) {
             if (builder.length() > 0) {
@@ -162,9 +155,7 @@ public class CalculatorServlet extends HttpServlet {
         builder = new StringBuilder();
     }
 
-    /**
-     * The main logical element of calculating.
-     */
+
     private String calculate() {
         if (operation == Operations.None || !ifExistsFirstNumber || !ifExistsSecondNumber) {
             return "undefined";
